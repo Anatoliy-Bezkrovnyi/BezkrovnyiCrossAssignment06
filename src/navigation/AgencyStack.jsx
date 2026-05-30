@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
-import AgencyDetailsScreen from './screens/AgencyDetailsScreen/AgencyDetailsScreen';
+import OrderDetailsScreen from './screens/OrderDetailsScreen/OrderDetailsScreen';
 
 const Stack = createStackNavigator();
 
@@ -15,7 +15,7 @@ const AgencyStack = () => {
           component={HomeScreen}
           options={{ title: 'Welcome' }}
         />
-        <Stack.Screen name="Details" component={AgencyDetailsScreen} />
+        <Stack.Screen name="OrderDetailsScreen" component={OrderDetailsScreen} />
       </Stack.Navigator>
     
   );

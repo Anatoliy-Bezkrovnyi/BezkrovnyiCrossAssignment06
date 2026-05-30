@@ -30,9 +30,7 @@ const createStyles = (width, height) => {
       agencyTitle: {
         flexDirection: 'row',
         gap: 10,
-      },
-
-      
+    },      
   });
 };
 

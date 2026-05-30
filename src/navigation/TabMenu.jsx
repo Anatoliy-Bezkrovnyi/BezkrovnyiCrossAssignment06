@@ -38,7 +38,7 @@ const TabMenu = () => {
           name="Home" 
           component={AgencyStack} 
           options={{ 
-            title: 'Головна',
+            title: 'Home',
             headerShown: false
           }} 
         />

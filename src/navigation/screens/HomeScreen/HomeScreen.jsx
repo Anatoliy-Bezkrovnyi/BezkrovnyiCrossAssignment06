@@ -1,16 +1,17 @@
 import { ScrollView } from 'react-native';
 import AgencyCard from '../../../components/AgencyCard/AgencyCard';
 import agenciesData from '../../../data/agencyProvider'; 
+import styles from './HomeScreen.styles';
 
 export default function HomeScreen({ navigation }) {
   return (
-    <ScrollView contentContainerStyle={{ gap: 15, padding: 10 }}>
+    <ScrollView contentContainerStyle={styles.scrollContent}>
       {agenciesData.map((item) => (
         <AgencyCard 
           key={item.agencyID} 
-          agency={item} // Передаємо весь об'єкт агенції
-          onPress={() => navigation.navigate('OrderScreen', { id: item.agencyID })} // Логіка для кнопки замовлення
-          onBackPress={() => navigation.goBack()} // Логіка для кнопки Назад
+          agency={item}
+          onPress={() => navigation.navigate('OrderDetailsScreen', { id: item.agencyID })}
+          onBackPress={() => navigation.goBack()}
         />
       ))}
     </ScrollView>
