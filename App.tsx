@@ -11,7 +11,8 @@ import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-cont
 import { ThemeProvider } from './src/context/themeContext/themeContext'; 
 import useTheme from './src/context/themeContext/useTheme';
 import TabMenu from './src/navigation/TabMenu';
-
+import { Provider } from 'react-redux';
+import { store } from './src/context/redux/store';
 function AppContent() {
   const { theme } = useTheme();
   
@@ -37,11 +38,14 @@ function AppContent() {
 
 export default function App() { 
   return (
-    <SafeAreaProvider>
-      <ThemeProvider>
-        <AppContent />
-      </ThemeProvider>      
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>      
+      </SafeAreaProvider>
+    </Provider>
+    
   );
 }
 
