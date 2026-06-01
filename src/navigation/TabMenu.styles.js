@@ -2,20 +2,20 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: '#1e1e1e', // Темний фон панелі, під стиль твоїх карток
-    borderTopWidth: 0,          // Прибираємо дефолтну світлу лінію зверху
-    height: 65,                 // Оптимальна висота для кліків
-    paddingBottom: 8,           // Відступ підписів від низу екрана
-    paddingTop: 8,              // Відступ іконок від верху панелі
+    backgroundColor: '#1e1e1e', 
+    borderTopWidth: 0,          
+    height: 65,                 
+    paddingBottom: 8,           
+    paddingTop: 8,              
   },
   tabBarLabel: {
-    fontSize: 12,               // Розмір шрифту підписів
+    fontSize: 12,               
     fontWeight: '500',
   },
   header: {
-    backgroundColor: '#303030', // Колір верхнього хедера екрана
-    shadowColor: 'transparent', // Прибираємо тінь хедера на iOS
-    elevation: 0,               // Прибираємо тінь хедера на Android
+    backgroundColor: '#303030', 
+    shadowColor: 'transparent', 
+    elevation: 0,               
   },
 });
 

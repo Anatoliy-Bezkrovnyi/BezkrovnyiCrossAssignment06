@@ -7,10 +7,15 @@ import TasksScreen from '../navigation/screens/TasksScreen/TasksScreen';
 import ProfileScreen from '../navigation/screens/ProfileScreen/ProfileScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './TabMenu.styles';
+import useTheme from '../context/themeContext/useTheme';
 
 const Tab = createBottomTabNavigator();
 
 const TabMenu = () => {
+
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
     <NavigationContainer>
       <Tab.Navigator screenOptions={({ route }) => ({
@@ -28,8 +33,14 @@ const TabMenu = () => {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#b5cf82',
-          tabBarInactiveTintColor: '#8e8e93',
-          tabBarStyle: styles.tabBar,
+          tabBarInactiveTintColor: isDark ? '#8e8e93' : '#a1a1a1',
+          tabBarStyle: [
+            styles.tabBar, 
+            {
+              backgroundColor: isDark ? '#1e1e1e' : '#ffffff',
+              borderTopColor: isDark ? '#303030' : '#e5e5e5',
+            }
+          ],
           tabBarLabelStyle: styles.tabBarLabel,
           headerStyle: styles.header,
           headerTintColor: '#ffffff',
